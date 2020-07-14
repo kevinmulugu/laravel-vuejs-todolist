@@ -31,6 +31,7 @@ Empty List | With Items
     DB_PASSWORD=mypass
     ```
 1. Migrate your migrations: `php artisan migrate`
+1. Generate application encryption key: `php artisan key:generate`
 1. Run `npm install && npm run dev` to install node.js dependencies
 1. Start your development server and start testing the web app. `php artisan serve --port 8080`
 1. Congratulations if you made it!

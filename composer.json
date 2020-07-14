@@ -1,12 +1,33 @@
 {
     "name": "laravel/laravel",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "TodoList Web App using Vue.js and The Laravel Framework.",
+    "homepage": "https://github.com/mulugu/laravel-vuejs-todolist",
+    "authors": [
+        {
+            "name": "Kevin Mulugu",
+            "email": "kevinmulugu@gmail.com",
+            "homepage": "https://twitter.com/kevvoh_",
+            "role": "Fullstack Developer"
+        }
+    ],
     "keywords": [
+        "TodoList",
         "framework",
-        "laravel"
+        "laravel",
+        "Vue.js"
     ],
     "license": "MIT",
+    "support": {
+        "email": "kevinmulugu@gmail.com",
+        "issues": "https://github.com/mulugu/laravel-vuejs-todolist/issues",
+        "forum": "https://github.com/mulugu/laravel-vuejs-todolist",
+        "wiki": "https://github.com/mulugu/laravel-vuejs-todolist/wiki",
+        "irc": "https://github.com/mulugu/laravel-vuejs-todolist",
+        "source": "https://github.com/mulugu/laravel-vuejs-todolist",
+        "docs": "https://github.com/mulugu/laravel-vuejs-todolist",
+        "chat": "https://github.com/mulugu/laravel-vuejs-todolist"
+    },
     "require": {
         "php": "^7.2.5",
         "fideloper/proxy": "^4.2",
