@@ -2015,6 +2015,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'TodoList',
   data: function data() {
@@ -37799,7 +37801,12 @@ var render = function() {
                         }
                       ],
                       staticClass: "form-control mr-3",
-                      attrs: { minlength: "5", maxlength: "50", type: "text" },
+                      attrs: {
+                        minlength: "5",
+                        maxlength: "50",
+                        placeholder: "Enter todo name and press enter",
+                        type: "text"
+                      },
                       domProps: { value: _vm.createTodoForm.name },
                       on: {
                         keyup: function($event) {
@@ -38041,6 +38048,7 @@ var render = function() {
                           attrs: {
                             minlength: "5",
                             maxlength: "50",
+                            placeholder: "Enter todo name and press enter",
                             type: "text"
                           },
                           domProps: { value: _vm.editTodoForm.name },
