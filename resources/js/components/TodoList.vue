@@ -13,6 +13,18 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
+                        <div v-if="createTodoForm.isCreated" class="alert alert-success alert-dismissible fade show" role="alert">
+                            <span>Todo item created successfully</span>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div v-if="editTodoForm.isUpdated" class="alert alert-success alert-dismissible fade show" role="alert">
+                            <span>Todo item updated successfully</span>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     </section>
                     <section id="add-todo-form" class="my-3">
                         <form>
@@ -46,7 +58,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     {{ todo.name }}
                                     <span class="d-flex justify-content-between align-items-center">
-                                        <a class="text-info mr-2" href="#" @click.prevent="showEditTodoForm(todo)">
+                                        <a class="text-success mr-2" href="#" @click.prevent="showEditTodoForm(todo)">
                                             <i class="fa fa-edit"> </i> Edit
                                         </a>
                                         <a class="text-danger" href="#" @click.prevent="destroy(todo)">
@@ -99,7 +111,7 @@
                                         <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
                                         <span class="sr-only">Loading...</span>
                                     </button>
-                                    <button v-else @click.prevent="updateTodo" class="btn btn-primary">Update</button>
+                                    <button v-else @click.prevent="updateTodo" class="btn btn-success">Update</button>
                                 </div>
                             </form>
                         </section>
@@ -124,11 +136,13 @@
                 },
                 createTodoForm: {
                     isSubmitting: false,
+                    isCreated: false,
                     name: undefined,
                     errors: []
                 },
                 editTodoForm: {
                     isSubmitting: false,
+                    isUpdated: false,
                     uuid: undefined,
                     name: undefined,
                     errors: []
@@ -180,6 +194,7 @@
                 .then((response) => {
                     this.createTodoForm.errors = [];
                     this.createTodoForm.name = undefined;
+                    this.createTodoForm.isCreated = true;
                     this.loadTodos();
                 })
                 .catch((error) => {
@@ -214,6 +229,7 @@
                         $('#editTodoItemModal').modal('hide');
                         this.editTodoForm.name = undefined;
                         this.editTodoForm.uuid = undefined;
+                        this.editTodoForm.isUpdated = true;
                         this.loadTodos();
                     })
                     .catch((error) => {

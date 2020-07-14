@@ -42,7 +42,7 @@ class TodoItemController extends Controller
          * Valiate the name
          */
         $this->validate($request, [
-            'name' => [ 'string', 'min:5', 'max:50', 'unique:todo_items,name' ]
+            'name' => [ 'required',  'string', 'min:5', 'max:50', 'unique:todo_items,name' ]
         ]);
 
         $todoItem = new TodoItem();
@@ -66,7 +66,7 @@ class TodoItemController extends Controller
          * Exempt the current TodoItem if the name has not changed
          */
         $this->validate($request, [
-            'name' => [ 'string', 'min:5', 'max:50', 'unique:todo_items,name,'.$todoItem->id ]
+            'name' => [ 'required', 'string', 'min:5', 'max:50', 'unique:todo_items,name,'.$todoItem->id ]
         ]);
 
         $todoItem->name = $request->name;

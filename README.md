@@ -10,8 +10,8 @@ The following must be installed and available on your terminal:
 Empty List | With Items
 ------------ | -------------
 ![Empty list](./screenshots/screen1.png) | ![Full list](./screenshots/screen2.png)
- Edit Modal | 
-| ![With edit modal](./screenshots/screen3.png) |
+ Edit Modal | Full list
+| ![With edit modal](./screenshots/screen3.png) | ![With edit modal](./screenshots/screen4.png)|
 
 
 
