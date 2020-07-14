@@ -21,6 +21,7 @@
                                     v-model="createTodoForm.name"
                                     v-on:keyup.enter="addTodo"
                                     minlength="5" maxlength="50"
+                                    placeholder="Enter todo name and press enter"
                                     type="text" class="form-control mr-3">
                                 <button v-if="createTodoForm.isSubmitting" class="btn btn-primary" type="button" disabled>
                                     <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
@@ -86,6 +87,7 @@
                                         v-model="editTodoForm.name"
                                         v-on:keyup.enter="updateTodo"
                                         minlength="5" maxlength="50"
+                                        placeholder="Enter todo name and press enter"
                                         type="text" class="form-control mr-3">
                                     <button v-if="editTodoForm.isSubmitting" class="btn btn-primary" type="button" disabled>
                                         <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
