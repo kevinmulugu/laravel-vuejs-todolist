@@ -17,7 +17,11 @@
                     <section id="add-todo-form" class="my-3">
                         <form>
                             <div class="d-flex justify-content-between align-items-center">
-                                <input v-model="createTodoForm.name" type="text" class="form-control mr-3">
+                                <input
+                                    v-model="createTodoForm.name"
+                                    v-on:keyup.enter="addTodo"
+                                    minlength="5" maxlength="50"
+                                    type="text" class="form-control mr-3">
                                 <button v-if="createTodoForm.isSubmitting" class="btn btn-primary" type="button" disabled>
                                     <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
                                     <span class="sr-only">Loading...</span>
@@ -78,7 +82,11 @@
                         <section id="edit-todo">
                             <form>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <input v-model="editTodoForm.name" type="text" class="form-control mr-3">
+                                    <input
+                                        v-model="editTodoForm.name"
+                                        v-on:keyup.enter="updateTodo"
+                                        minlength="5" maxlength="50"
+                                        type="text" class="form-control mr-3">
                                     <button v-if="editTodoForm.isSubmitting" class="btn btn-primary" type="button" disabled>
                                         <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
                                         <span class="sr-only">Loading...</span>

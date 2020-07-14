@@ -2007,6 +2007,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'TodoList',
   data: function data() {
@@ -37791,9 +37799,24 @@ var render = function() {
                         }
                       ],
                       staticClass: "form-control mr-3",
-                      attrs: { type: "text" },
+                      attrs: { minlength: "5", maxlength: "50", type: "text" },
                       domProps: { value: _vm.createTodoForm.name },
                       on: {
+                        keyup: function($event) {
+                          if (
+                            !$event.type.indexOf("key") &&
+                            _vm._k(
+                              $event.keyCode,
+                              "enter",
+                              13,
+                              $event.key,
+                              "Enter"
+                            )
+                          ) {
+                            return null
+                          }
+                          return _vm.addTodo($event)
+                        },
                         input: function($event) {
                           if ($event.target.composing) {
                             return
@@ -38015,9 +38038,28 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control mr-3",
-                          attrs: { type: "text" },
+                          attrs: {
+                            minlength: "5",
+                            maxlength: "50",
+                            type: "text"
+                          },
                           domProps: { value: _vm.editTodoForm.name },
                           on: {
+                            keyup: function($event) {
+                              if (
+                                !$event.type.indexOf("key") &&
+                                _vm._k(
+                                  $event.keyCode,
+                                  "enter",
+                                  13,
+                                  $event.key,
+                                  "Enter"
+                                )
+                              ) {
+                                return null
+                              }
+                              return _vm.updateTodo($event)
+                            },
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
