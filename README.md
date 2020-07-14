@@ -1,4 +1,4 @@
-#Laravel Vue.js TodoList Web Application
+# Laravel Vue.js TodoList Web Application
 
 This is a Web Application leveraging on Vue.js and Laravel to create SPA(Single Page Application) application.
 
