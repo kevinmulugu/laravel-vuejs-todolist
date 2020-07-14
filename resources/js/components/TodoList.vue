@@ -42,16 +42,22 @@
                             <li
                                 v-if="!todos.isLoading && todos.data.length > 0"
                                 v-for="todo in todos.data" :key="todo.uuid"
-                                class="list-group-item d-flex justify-content-between align-items-center">
-                                {{ todo.name }}
-                                <span class="d-flex justify-content-between align-items-center">
-                                    <a class="text-info mr-2" href="#" @click.prevent="showEditTodoForm(todo)">
-                                        <i class="fa fa-edit"> </i> Edit
-                                    </a>
-                                    <a class="text-danger" href="#" @click.prevent="destroy(todo)">
-                                        <i class="fa fa-trash-o"></i> Delete
-                                    </a>
-                                </span>
+                                class="list-group-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    {{ todo.name }}
+                                    <span class="d-flex justify-content-between align-items-center">
+                                        <a class="text-info mr-2" href="#" @click.prevent="showEditTodoForm(todo)">
+                                            <i class="fa fa-edit"> </i> Edit
+                                        </a>
+                                        <a class="text-danger" href="#" @click.prevent="destroy(todo)">
+                                            <i class="fa fa-trash-o"></i> Delete
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="d-flex w-100 justify-content-between">
+                                    <small class="text-muted">Created</small>
+                                    <small class="text-muted">{{ todo.created_at }}</small>
+                                </div>
                             </li>
                             <li v-if="!todos.isLoading && todos.data.length === 0" class="list-group-item list-group-item-action list-group-item-warning">
                                 No todo items found.

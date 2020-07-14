@@ -2017,6 +2017,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'TodoList',
   data: function data() {
@@ -37889,63 +37895,85 @@ var render = function() {
                   return !_vm.todos.isLoading && _vm.todos.data.length > 0
                     ? _c(
                         "li",
-                        {
-                          key: todo.uuid,
-                          staticClass:
-                            "list-group-item d-flex justify-content-between align-items-center"
-                        },
+                        { key: todo.uuid, staticClass: "list-group-item" },
                         [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(todo.name) +
-                              "\n                            "
-                          ),
                           _c(
-                            "span",
+                            "div",
                             {
                               staticClass:
                                 "d-flex justify-content-between align-items-center"
                             },
                             [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "text-info mr-2",
-                                  attrs: { href: "#" },
-                                  on: {
-                                    click: function($event) {
-                                      $event.preventDefault()
-                                      return _vm.showEditTodoForm(todo)
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("i", { staticClass: "fa fa-edit" }),
-                                  _vm._v(
-                                    " Edit\n                                "
-                                  )
-                                ]
+                              _vm._v(
+                                "\n                                " +
+                                  _vm._s(todo.name) +
+                                  "\n                                "
                               ),
-                              _vm._v(" "),
                               _c(
-                                "a",
+                                "span",
                                 {
-                                  staticClass: "text-danger",
-                                  attrs: { href: "#" },
-                                  on: {
-                                    click: function($event) {
-                                      $event.preventDefault()
-                                      return _vm.destroy(todo)
-                                    }
-                                  }
+                                  staticClass:
+                                    "d-flex justify-content-between align-items-center"
                                 },
                                 [
-                                  _c("i", { staticClass: "fa fa-trash-o" }),
-                                  _vm._v(
-                                    " Delete\n                                "
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "text-info mr-2",
+                                      attrs: { href: "#" },
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          return _vm.showEditTodoForm(todo)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("i", { staticClass: "fa fa-edit" }),
+                                      _vm._v(
+                                        " Edit\n                                    "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "text-danger",
+                                      attrs: { href: "#" },
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          return _vm.destroy(todo)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("i", { staticClass: "fa fa-trash-o" }),
+                                      _vm._v(
+                                        " Delete\n                                    "
+                                      )
+                                    ]
                                   )
                                 ]
                               )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "d-flex w-100 justify-content-between"
+                            },
+                            [
+                              _c("small", { staticClass: "text-muted" }, [
+                                _vm._v("Created")
+                              ]),
+                              _vm._v(" "),
+                              _c("small", { staticClass: "text-muted" }, [
+                                _vm._v(_vm._s(todo.created_at))
+                              ])
                             ]
                           )
                         ]
